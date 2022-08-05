@@ -1,7 +1,7 @@
 {
     "$schema": "./../node_modules/ng-packagr/package.schema.json",
     "allowedNonPeerDependencies": [
-        "analytics.js"
+        "@segment/analytics-next"
     ],
     "dest": "../dist",
     "lib": {

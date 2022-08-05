@@ -1,14 +1,14 @@
 {
-  "name": "ngx-segment-analytics",
-  "version": "2.0.0",
+  "name": "ngx-analytics-next",
+  "version": "1.0.0",
   "description": "Segment Analytics for Angular",
   "repository": {
     "type": "git",
-    "url": "https://github.com/opendecide/ngx-segment-analytics"
+    "url": "https://github.com/cartona/ngx-analytics-next"
   },
   "author": {
-    "name": "OpenDecide",
-    "email": "contact@opendecide.com"
+    "name": "MAF",
+    "email": "maf@cartona.com"
   },
   "keywords": [
     "angular",
@@ -16,11 +16,12 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/opendecide/ngx-segment-analytics/issues"
+    "url": "https://github.com/cartona/ngx-analytics-next/issues"
   },
   "peerDependencies": {
     "@angular/common": ">=12.0.0 <14.0.0",
-    "@angular/core": ">=12.0.0 <14.0.0"
+    "@angular/core": ">=12.0.0 <14.0.0",
+    "@segment/analytics-next": "^1.40.0"
   },
   "dependencies": {}
 }

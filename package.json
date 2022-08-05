@@ -1,34 +1,39 @@
 {
-  "name": "@opendecide/ngx-segment-analytics",
-  "version": "2.0.0",
-  "scripts": {
-    "build": "ng-packagr -p src/ng-package.json",
-    "build:watch": "yarn run build --watch",
-    "docs": "yarn run docs:build",
-    "docs:build": "compodoc -p tsconfig.json -n ngx-segment-analytics -d docs --hideGenerator",
-    "docs:serve": "yarn run docs:build -- -s",
-    "docs:watch": "yarn run docs:build -- -s -w",
-    "lint": "tslint --project tsconfig.json src/**/*.ts",
-    "test": "echo 'not implemented yet'",
-    "test_not_yet": "tsc && karma start"
-  },
+  "name": "ngx-analytics-next",
+  "version": "1.0.0",
+  "description": "Segment Analytics's for Angular",
   "repository": {
     "type": "git",
-    "url": "https://github.com/opendecide/ngx-segment-analytics"
+    "url": "https://github.com/cartona/ngx-analytics-next"
   },
   "author": {
-    "name": "OpenDecide"
+    "name": "MAF",
+    "email": "maf@cartona.com"
   },
   "keywords": [
     "angular",
-    "segment"
+    "segment",
+    "analytics-next"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/opendecide/ngx-segment-analytics/issues"
+    "url": "https://github.com/cartona/ngx-analytics-next/issues"
   },
   "dependencies": {},
+  "peerDependencies": {
+    "@angular/common": ">=12.0.0 <14.0.0",
+    "@angular/core": ">=12.0.0 <14.0.0",
+    "@segment/analytics-next": "^1.40.0"
+  },
+  "scripts": {
+    "postinstall": "ng-packagr -p src/ng-package.json",
+    "build": "ng-packagr -p src/ng-package.json",
+    "build:watch": "yarn run build --watch",
+    "lint": "tslint --project tsconfig.json src/**/*.ts",
+    "test": "echo 'not implemented yet'"
+  },
   "devDependencies": {
+    "@angular-eslint/eslint-plugin": "^14.0.2",
     "@angular/common": "^13.2.2",
     "@angular/compiler": "^13.2.2",
     "@angular/compiler-cli": "^13.2.2",
@@ -36,10 +41,18 @@
     "@angular/platform-browser": "^13.2.2",
     "@angular/platform-browser-dynamic": "^13.2.2",
     "@compodoc/compodoc": "^1.1.18",
+    "@segment/analytics-next": "^1.42.1",
     "@types/jasmine": "^3.10.3",
     "@types/node": "^17.0.18",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
     "codelyzer": "^6.0.1",
     "core-js": "^3.21.0",
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "jasmine-core": "~4.0.0",
     "jasmine-spec-reporter": "~7.0.0",
     "karma": "^6.3.16",
@@ -49,11 +62,11 @@
     "karma-jasmine": "^4.0.1",
     "karma-jasmine-html-reporter": "^1.5.3",
     "ng-packagr": "^13.2.1",
+    "prettier": "^2.7.1",
     "protractor": "~7.0.0",
     "rxjs": "^7.5.4",
     "ts-node": "^10.5.0",
     "tslib": "^2.0.3",
-    "tslint": "^6.1.2",
     "typescript": "~4.5.5",
     "zone.js": "^0.11.3"
   },

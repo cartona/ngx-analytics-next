@@ -1,28 +1,20 @@
-# ngx-segment-analytics
+# ngx-analytics-next
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/opendecide/ngx-segment-analytics.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/opendecide/ngx-segment-analytics.svg?branch=master)](https://travis-ci.org/opendecide/ngx-segment-analytics)
-[![GitHub Downloads All Releases](https://img.shields.io/github/downloads/opendecide/ngx-segment-analytics/total.svg)](https://github.com/opendecide/ngx-segment-analytics)
-[![npm Downloads All Releases](https://img.shields.io/npm/dw/ngx-segment-analytics.svg)](https://www.npmjs.com/package/ngx-segment-analytics)
-[![npm Version](https://img.shields.io/npm/v/ngx-segment-analytics.svg)](https://www.npmjs.com/package/ngx-segment-analytics)
-[![node Version Required](https://img.shields.io/node/v/ngx-segment-analytics.svg)](https://www.npmjs.com/package/ngx-segment-analytics)
-[![Angular Universal Compatible](https://img.shields.io/badge/angular-universal-brightgreen.svg)](https://universal.angular.io/)
+An Angular module wrapper for Segment's official `analytics-next` JS library.
 
-This Angular module provides an API for Segment using the `analytics.js` official library.
-
-Compatible with Angular AOT and Universal.
+It is inspired by [@opendecide/ngx-segment-analytic](https://github.com/opendecide/ngx-segment-analytics)
 
 ## Installation
 
 To install this library, run:
 
 ```bash
-$ npm install --save ngx-segment-analytics
+$ yarn add ngx-analytics-next
 ```
 
 ## Consuming Segment
 
-Add the `SegmentModule` to your Angular `AppModule`:
+Add the `AnalyticsNextModule` to your Angular `AppModule`:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,8 +22,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import the Segment module
-import { SegmentModule } from 'ngx-segment-analytics';
+// Import the Analytics Next module
+import { AnalyticsNextModule } from 'ngx-analytics-next';
 
 @NgModule({
   declarations: [
@@ -39,8 +31,8 @@ import { SegmentModule } from 'ngx-segment-analytics';
   ],
   imports: [
     BrowserModule,
-    // Segment Importation
-    SegmentModule.forRoot({ apiKey: 'YOUR_WRITE_APIKEY', debug: true, loadOnInitialization: true })
+    // Analytics Next Importation
+    AnalyticsNextModule.forRoot({ writeKey: 'YOUR_WRITE_APIKEY' })
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -52,27 +44,25 @@ You can use the `SegmentService` in any constructor as a injected service :
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
-import { SegmentService } from 'ngx-segment-analytics';
+import { AnalyticsNextService } from 'ngx-analytics-next';
+
 @Component({
-    selector: 'hero',
-    templateUrl: './hero.component.html',
-    styleUrls: ['./hero.component.css']
+  selector: 'hero',
+  templateUrl: './hero.component.html',
+  styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
 
-    constructor(private segment: SegmentService) { }
+  constructor(private segment: AnalyticsNextService) {
+  }
 
-    public ngOnInit() {
-        this.segment.track('load an hero')
-            .then(() => console.log("Event sended"));
-    }
+  public ngOnInit() {
+    this.segment.track('load an hero')
+        .then(() => console.log("Event sended"));
+  }
 
 }
 ```
-
-## Documentation
-
-A full documentation is available [here](https://opendecide.github.io/ngx-segment-analytics/)
 
 ## API
 
@@ -104,13 +94,13 @@ addSourceMiddleware(middleware: ({integrations, payload, next}) => void): void;
 To lint all `*.ts` files:
 
 ```bash
-$ npm run lint
+$ eslint .
 ```
 
 To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
 
 ```bash
-$ npm run build
+$ yarn build
 ```
 
 To publish on npmjs registry :
@@ -118,7 +108,11 @@ To publish on npmjs registry :
 $ npm publish dist
 ```
 
+## TODO
+
+- [ ] A proper documentation
+- [ ] A proper unit tests
 
 ## License
 
-MIT ©2019 [OpenDecide](https://www.opendecide.com)
+MIT ©2019 [Cartona](https://www.cartona.com)
