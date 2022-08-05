@@ -1,7 +1,7 @@
 {
-  "name": "ngx-analytics-next",
+  "name": "@cartona/ngx-analytics-next",
   "version": "1.0.0",
-  "description": "Segment Analytics's for Angular",
+  "description": "Segment Analytics's Next wrapper for Angular",
   "repository": {
     "type": "git",
     "url": "https://github.com/cartona/ngx-analytics-next"

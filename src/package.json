@@ -1,5 +1,5 @@
 {
-  "name": "ngx-analytics-next",
+  "name": "@cartona/ngx-analytics-next",
   "version": "1.0.0",
   "description": "Segment Analytics for Angular",
   "repository": {
