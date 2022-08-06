@@ -12,7 +12,7 @@ To install this library, run:
 $ yarn add ngx-analytics-next
 ```
 
-## Consuming Segment
+## Using Segment
 
 Add the `AnalyticsNextModule` to your Angular `AppModule`:
 
@@ -40,7 +40,7 @@ import { AnalyticsNextModule } from 'ngx-analytics-next';
 export class AppModule { }
 ```
 
-You can use the `SegmentService` in any constructor as a injected service :
+You can use the `AnalyticsNextService` in any constructor as a injected service :
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -53,11 +53,11 @@ import { AnalyticsNextService } from 'ngx-analytics-next';
 })
 export class HeroComponent implements OnInit {
 
-  constructor(private segment: AnalyticsNextService) {
+  constructor(private analyticsService: AnalyticsNextService) {
   }
 
   public ngOnInit() {
-    this.segment.track('load an hero')
+    this.analyticsService.track('load an hero')
         .then(() => console.log("Event sended"));
   }
 

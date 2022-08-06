@@ -30,3 +30,5 @@ Desktop.ini
 # Library files
 src/*
 build/*
+
+.github
