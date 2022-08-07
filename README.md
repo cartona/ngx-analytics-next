@@ -23,7 +23,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import the Analytics Next module
-import { AnalyticsNextModule } from 'ngx-analytics-next';
+import { AnalyticsNextModule } from '@cartona/ngx-analytics-next';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ You can use the `AnalyticsNextService` in any constructor as a injected service 
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
-import { AnalyticsNextService } from 'ngx-analytics-next';
+import { AnalyticsNextService } from '@cartona/ngx-analytics-next';
 
 @Component({
   selector: 'hero',
