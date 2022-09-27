@@ -60,7 +60,13 @@ export class AnalyticsNextService {
    * @param options Optional parameters
    */
   public load(settings: AnalyticsSettings, options?: InitOptions) {
-    this.analytics = AnalyticsBrowser.load(settings, options);
+    this.analytics = AnalyticsBrowser.load(settings, options)
+      .then(() => {
+        console.log('successfully loaded analytics');
+      })
+      .catch((error) => {
+        console.error(`loading analytics failed: ${error}`);
+      });
   }
 
   /**
@@ -91,13 +97,11 @@ export class AnalyticsNextService {
    *
    * @returns
    */
-  public track(
-    event: string,
-    properties?: any,
-    options?: any
-  ): Promise<AnalyticsNextService> {
+  public track(event: string, properties?: any, options?: any): Promise<any> {
     return new Promise((resolve) => {
       this.analytics.track(event, properties, options, () => resolve(this));
+    }).catch((err) => {
+      console.error(`error tracking: ${err}`);
     });
   }
 
