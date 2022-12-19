@@ -22,7 +22,6 @@
     "@segment/analytics-next": "^1.48.0"
   },
   "scripts": {
-    "postinstall": "ng-packagr -p src/ng-package.json",
     "build": "ng-packagr -p src/ng-package.json",
     "build:watch": "yarn run build --watch",
     "lint": "tslint --project tsconfig.json src/**/*.ts",
