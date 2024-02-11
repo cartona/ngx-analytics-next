@@ -1650,7 +1650,7 @@
   dependencies:
     tslib "^2.4.1"
 
-"@segment/analytics-next@^1.48.0":
+"@segment/analytics-next@^1.64.0":
   version "1.64.0"
   resolved "https://registry.yarnpkg.com/@segment/analytics-next/-/analytics-next-1.64.0.tgz#16ec391e097f0b1f6f13fca0d604689bed40c6ad"
   integrity sha512-2qlyJ2Vnu6qjtuHZCzMg1ebMlbLXAKCzfHPMsZjSV+6BxpZe8pKjA0OVOKtKPTlKq1/aUw44MsKZ4N0JN+xhbw==
